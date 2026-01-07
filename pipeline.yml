@@ -16,7 +16,7 @@ scan-code:
   stage: scan
   image: maven:3.9-eclipse-temurin-17
   script:
-    - mvn compile sonar:sonar -Dsonar.projectKey=$SONAR_PROJECT_KEY -Dsonar.organization=$SONAR_ORGANIZATION -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.qualitygate.wait=true
+    - mvn compile org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=$SONAR_PROJECT_KEY -Dsonar.organization=$SONAR_ORGANIZATION -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.qualitygate.wait=true
 
 test_app:
   stage: test
